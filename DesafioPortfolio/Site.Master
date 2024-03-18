@@ -1,0 +1,105 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="DesafioPortfolio.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <asp:ContentPlaceHolder runat="server" ID="HeaderContent" />
+
+    <link href="assests/css/app.min.css" rel="stylesheet" />
+    <link href="assests/plugins/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" />   
+</head>
+<body>
+    <div id="app" class="app">
+        <div id="header" class="app-header">
+            <div class="mobile-toggler">
+                <button type="button" class="menu-toggler" data-toggle="sidebar-mobile">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+
+            <div class="brand">
+                <div class="desktop-toggler">
+                    <button type="button" class="menu-toggler" data-toggle="sidebar-minify">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+
+                <a href="/" class="brand-logo">
+                    <img src="assests/img/logo.png" alt="" />
+                </a>
+            </div>
+
+            <div class="menu justify-content-end">
+                <div class="menu-item">
+                    <a class="menu-link">
+                        <div class="menu-img online">
+                            <img src="assests/img/user.jpg" alt="" class="mw-100 mh-100 rounded-circle" />
+                        </div>
+                        <div class="menu-text">João Lima</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="sidebar" class="app-sidebar">
+            <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+                <div class="menu">
+                    <div class="menu-header">Cadastros</div>
+                    <div class="menu-item">
+                        <a href="Empresas" class="menu-link">
+                            <span class="menu-icon"><i class="fa fa-university"></i></span>
+                            <span class="menu-text">Empresas</span>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a href="Associados" class="menu-link">
+                            <span class="menu-icon"><i class="fa fa-users"></i></span>
+                            <span class="menu-text">Associados</span>
+                        </a>
+                    </div>
+
+                    <div class="p-3 px-4 mt-auto hide-on-minified">
+                        <a href="/" class="btn btn-block btn-secondary font-weight-600 rounded-pill">
+                            <i class="fa fa-home mr-1 ml-n1 opacity-5"></i>Página Inicial
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="app-sidebar-mobile-backdrop" data-dismiss="sidebar-mobile"></button>
+        </div>
+
+        <div id="content" class="app-content">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </div>
+
+        <div class="modal fade" id="modalLoad" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="meuModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLoadLabel">Carregando...</h5>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="sr-only">Carregando...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" data-click="scroll-top" class="btn-scroll-top fade"><i class="fa fa-arrow-up"></i></a>
+    </div>
+
+    <script src="assests/js/app.min.js"></script>
+    <script src="assests/plugins/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server"></asp:ContentPlaceHolder>
+
+</body>
+</html>
